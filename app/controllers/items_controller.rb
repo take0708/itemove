@@ -3,6 +3,7 @@ class ItemsController < ApplicationController
   end
 
   def new
+    @item = Item.new
   end
 
   def create
@@ -21,5 +22,15 @@ class ItemsController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def item_params
+    params.require(:item).permit(
+    :code, 
+    :name,
+    :vol,
+  ) 
   end
 end
