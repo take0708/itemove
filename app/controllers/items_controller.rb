@@ -1,9 +1,10 @@
 class ItemsController < ApplicationController
   def index
+    @items = Item.all
   end
 
   def new
-    @item = Item.new
+    @items = Item.new
   end
 
   def create
@@ -13,6 +14,10 @@ class ItemsController < ApplicationController
     else
       render :new
     end
+  end
+
+  def show
+    @items = Item.all
   end
 
   def edit
