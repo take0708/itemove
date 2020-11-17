@@ -1,2 +1,15 @@
 <%= link_to 'アイテム登録', new_item_path %><br>
-</div>
+現在登録されているアイテム一覧
+<% @items.each do | item | %>
+<div class="item">
+  <div class="item-code">
+    商品コード　<%= item.code%>
+  </div>
+  <div class="item-name">
+    商品名　<%= item.name %>
+  </div>
+  <div class="item-vol">
+    数量　<%= item.vol%>
+  </div>
+ </div>
+<% end %>
