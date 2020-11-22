@@ -2,6 +2,7 @@
 現在登録されているアイテム一覧
 <% @items.each do | item | %>
 <div class="item">
+<%= link_to '削除', "/items/#{item.id}", method: :delete %>
   <div class="item-code">
     商品コード　<%= item.code%>
   </div>
