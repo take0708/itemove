@@ -8,12 +8,8 @@ class ItemsController < ApplicationController
   end
 
   def create
-    @item = Item.new(item_params)
-    if @item.save
-      redirect_to root_path
-    else
-      render :new
-    end
+    @items = Item.new(item_params)
+    redirect_to root_path
   end
 
   def show
